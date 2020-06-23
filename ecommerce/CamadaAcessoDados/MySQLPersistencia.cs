@@ -20,7 +20,7 @@ namespace ecommerce.CamadaAcessoDados
         int _ultimoId = 0;
 
         public int UltimoId { get => _ultimoId; set => _ultimoId = value; }
-
+        //...
         public MySQLPersistencia()
         {
             string strCon = System.Environment.GetEnvironmentVariable("MYSQLSTRCON");
