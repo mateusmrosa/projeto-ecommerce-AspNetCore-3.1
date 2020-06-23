@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section js{
+    <script src="~/views/Produtos/Index.js"></script>
+}
+
+
+<div class="container">
+    <div class="col-12" style="margin-top:20px;">
+        <div class="shadow p-3 mb-5 bg-white rounded"><h4>Cadastrar Produtos</h4></div>
+        <div class="col-12">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Nome do Produto</label>
+                        <input type="text" class="form-control" id="txtNome" placeholder="Insira o nome do produto">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Quantidade</label>
+                        <input type="number" class="form-control" id="txtQtde" placeholder="Informe a quantidade do produto">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Descricao</label>
+                        <input type="text" class="form-control" id="txtDescricao" placeholder="Qual a descrição desse produto?">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Preço</label>
+                        <input type="text" class="form-control" id="txtPreco" placeholder="Qual o preço desse produto?">
+                    </div>
+
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-2">
+                        <button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;" id="btnCadastrar"
+                                onclick="index.btnCadProduto();">
+                            Cadastrar
+                        </button>
+                    </div>
+                    <div class="form-group col-md-4 offset-md-6">
+                        <label>Inserir Imagem</label>
+                        <input type="file" class="form-control-file" id="foto"  accept="image/jpg, image/png">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <div id="divMsgAux"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

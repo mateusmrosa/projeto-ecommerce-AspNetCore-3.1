@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "IndexListar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section js{
+    <script src="~/views/Usuario/Index.js"></script>
+ }
+
+    <div class="container">
+        <div class="col-12" style="margin-top:20px;">
+            <div class="shadow p-3 mb-5 bg-white rounded"><h4>Listar Usuários</h4></div>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <div id="divMsgAux"></div>
+                </div>
+            </div>
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail4">Pesquisar</label>
+                        <input type="text" class="form-control" id="txtUsuario">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;"
+                                id="btnPesquisarUsuario" onclick="index.btnPesquisarUsuario();">
+                            Pesquisar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <table class="table" id="tbDados" style="display:none;">
+                          <thead>
+                              <tr>
+                                  <th>Id</th>
+                                  <th>Nome</th>
+                                  <th>Ações</th>
+                              </tr>
+                          </thead>
+                            <tbody id="tBodyUsuarios">
+                                @* aqui é preenchido com javascript por ajax dinamicamente *@
+                            </tbody>
+                        </table>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div id="semResultado"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>

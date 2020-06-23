@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link href="~/views/Default/index.css?v=1" rel="stylesheet" />
+}
+
+@section js{
+    <script src="~/views/Default/index.js?v=1"></script>
+}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Logar</h5>
+                        <form class="form-signin">
+                            <div class="form-label-group">
+                                <label for="inputEmail">Usuário</label>
+                                <input type="text" id="txtUsuario" class="form-control" placeholder="Usuário" />
+                            </div>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">Senha</label>
+                                <input type="password" id="txtSenha" class="form-control" placeholder="Senha" />
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            </div>
+
+                            <button type="button" class="custom-control btn btn-lg btn-primary btn-block text-uppercase" style="background-color:#212529;border-color:#212529;"
+                                    id="btnEntrar" onclick="index.btnEntrarOnClick();">
+                                Entrar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div id="divMsg" style="text-align:center;"></div>
+        </div>
+    </div>
+</body>
+

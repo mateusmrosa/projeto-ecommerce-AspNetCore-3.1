@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Catalogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section js{
+    <script src="~/views/Produtos/Index.js"></script>
+}
+
+<div class="container">
+    <div class="col-12" style="margin-top:20px;">
+        <div class="shadow p-3 mb-5 bg-white rounded"><h4>Catálogo de Produtos</h4></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Pesquisar</label>
+                <input type="text" class="form-control" placeholder="Pesquisa de Produtos..." id="txtProduto">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-12">
+                <button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;"
+                        onclick="index.ObterProdutos();">
+                    Pesquisar Produtos
+                </button>
+            </div>
+        </div>
+      
+        <div class="row" id="cardProdutos">
+
+        </div>
+
+    </div>
+</div>
