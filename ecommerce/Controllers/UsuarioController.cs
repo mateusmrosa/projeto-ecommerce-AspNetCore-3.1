@@ -16,6 +16,11 @@ namespace ecommerce.Controllers.Usuario
             return View();
         }
 
+        public IActionResult IndexObterPerfis()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Criar([FromBody] Dictionary<string, string> dados)
         {

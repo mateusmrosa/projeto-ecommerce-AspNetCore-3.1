@@ -15,7 +15,7 @@ let index = {
 
         if (dados.usuario.trim() == "" && dados.senha.trim() == "") {
 
-            let txt = '<div id="divMsg" class="alert alert-danger"> Preencha os Campos! </div>';
+            let txt = '<div id="divMsg" class="alert alert-danger"><b> Preencha os Campos!</b> </div>';
 
             document.getElementById("divMsgAux").innerHTML = txt;
             setTimeout(function () {
@@ -44,15 +44,19 @@ let index = {
             })
             .then(function (dadosObj) {
 
-                console.log(dadosObj);
-                document.getElementById("divMsg").className = "alert alert-success";
-                document.getElementById("divMsg").innerHTML = dadosObj.msg;
-
-                window.location.href = "/Produto";
+                if (dadosObj.operacao == false) {
+                    document.getElementById("divMsgAux").className = "alert alert-danger";
+                    document.getElementById("divMsgAux").innerHTML = dadosObj.msg;
+                }
+                else if (dadosObj.operacao == true) {
+                    document.getElementById("divMsgAux").className = "alert alert-success";
+                    document.getElementById("divMsgAux").innerHTML = dadosObj.msg;
+                    window.location.href = "/Produto";
+                }
             })
             .catch(function () {
 
-                document.getElementById("divMsg").innerHTML = "<span class='alert alert-success'>Erro</span>";
+                document.getElementById("divMsgAux").innerHTML = "<span class='alert alert-success'>Erro</span>";
             })
     }
 

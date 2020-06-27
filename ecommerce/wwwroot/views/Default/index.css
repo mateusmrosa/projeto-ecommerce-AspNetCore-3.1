@@ -1,2 +1,9 @@
 ﻿body {
+
+}
+
+.sombra {
+    -webkit-box-shadow: 7px 16px 32px -6px rgba(0,0,0,0.3);
+    -moz-box-shadow: 7px 16px 32px -6px rgba(0,0,0,0.3);
+    box-shadow: 7px 16px 32px -6px rgba(0,0,0,0.3);
 }

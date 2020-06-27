@@ -3,9 +3,13 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section css{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+}
 @section js{
     <script src="~/views/Usuario/Index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 }
 
 
@@ -36,6 +40,19 @@
                 <div class="form-row">
                     <div class="form-group col-6">
                         <button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;" onclick="index.btnCadastrar();">Cadastrar</button>
+                        <a data-fancybox data-type="iframe" data-src="IndexObterPerfis" href="javascript:;">
+                            Pesquisar
+                        </a>
+                        @*<button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;" onclick="">Pesquisar</button>*@
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" col-6>
+                        <label>Perfil: </label>
+                        <input type="hidden" id="hIdPerfil" value="0" />
+                        <div id="divPerfilNome">
+
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
@@ -43,6 +60,7 @@
                         <div id="divMsg"></div>
                     </div>
                 </div>
+
             </form>
         </div>
     </div>

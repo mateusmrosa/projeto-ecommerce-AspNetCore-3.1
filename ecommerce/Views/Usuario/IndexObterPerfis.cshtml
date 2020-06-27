@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Pesquisar Perfil";
+    Layout = "~/Views/Shared/_LayoutModal.cshtml";
+}
+
+
+<div class="container">
+    <style>
+        body {
+            width: 500px;
+            padding: 30px;
+        }
+        html{
+            border-radius:10px;
+        }
+    </style>
+    <div class="col-12" style="margin-top:20px;">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Nome do Produto</label>
+                    <input type="text" class="form-control" id="txtNome" placeholder="Insira o nome do produto">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;" id="btnCadastrar"
+                            onclick="index.btnCadProduto();">
+                        Cadastrar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
