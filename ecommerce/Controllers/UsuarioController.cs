@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ecommerce.CamadaNegocio;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -79,6 +80,12 @@ namespace ecommerce.Controllers.Usuario
             }
 
             return Json(usuariosLimpos);
+        }
+
+        public IActionResult PesquisarPerfil(string nome)
+        {
+            UsuarioCamadaNegocio usuarioCamNeg = new UsuarioCamadaNegocio();
+            return Json(usuarioCamNeg.ObterPerfis(nome));
         }
     }
 }

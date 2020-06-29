@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ecommerce.CamadaAcessoDados;
+using ecommerce.Models;
 using HelloWord.Models;
 
 namespace ecommerce.CamadaNegocio
@@ -50,6 +51,12 @@ namespace ecommerce.CamadaNegocio
          
             return usuarioBD.Pesquisar(usuario);
             
+        }
+
+        public List<Perfil> ObterPerfis(string nome)
+        {
+            PerfilBD perfilBD = new PerfilBD();
+            return perfilBD.Pesquisar(nome);
         }
     }
 }
