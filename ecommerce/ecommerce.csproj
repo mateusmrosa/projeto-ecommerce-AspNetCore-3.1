@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\..\..\..\..\..\%2540DESENVOLVIMENTO WEB\PROJETOS\PROJETOS IMPORTANTES\Projetos ApsNetCore 3.1\projeto ecommerce\ecommerce\wwwroot\imgs\ajax-loader.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
     <PackageReference Include="MySql.Data" Version="8.0.20" />
   </ItemGroup>

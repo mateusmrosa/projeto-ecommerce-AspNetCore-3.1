@@ -4,13 +4,39 @@
     Layout = "~/Views/Shared/_LayoutModal.cshtml";
 }
 
+@section js{
+    <script src="~/views/Usuario/indexObterPerfil.js?v=1"></script>
+    
+}
+
 
 <div class="container">
     <style>
         body {
-            width: 500px;
+            width: 800px;
+            height: 300px;
             padding: 30px;
         }
+
+        .lds-hourglass {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+            .lds-hourglass:after {
+                content: " ";
+                display: block;
+                border-radius: 50%;
+                width: 0;
+                height: 0;
+                margin: 8px;
+                box-sizing: border-box;
+                border: 32px solid #fff;
+                border-color: #fff transparent #fff transparent;
+                animation: lds-hourglass 1.2s infinite;
+            }
     </style>
     <div class="col-12" style="margin-top:20px;">
         <form>
@@ -23,12 +49,27 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <button type="button" class="btn btn-primary" style="background-color:#212529;border-color:#212529;" id="btnCadastrar"
-                            onclick="index.PesquisarPerfis();">
+                    <button type="button" class="btn btn-primary" id="btnPesquisar" style="background-color:#212529;border-color:#212529;"
+                            onclick="indexObterPerfil.btnPesquisarOnClick();">
                         Pesquisar
                     </button>
                 </div>
             </div>
         </form>
+
+        <table class="table" id="tbPerfis" style="display:none;">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyPerfils">
+                <!--Aqui é carregado com por ajax-->
+            </tbody>
+            <span id="divMsg"></span>
+        </table>
+
     </div>
 </div>

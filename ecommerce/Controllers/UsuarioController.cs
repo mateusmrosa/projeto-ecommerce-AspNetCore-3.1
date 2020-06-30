@@ -82,10 +82,10 @@ namespace ecommerce.Controllers.Usuario
             return Json(usuariosLimpos);
         }
 
-        public IActionResult PesquisarPerfil(string nome)
+        public IActionResult ObterPerfis(string nome)
         {
-            UsuarioCamadaNegocio usuarioCamNeg = new UsuarioCamadaNegocio();
-            return Json(usuarioCamNeg.ObterPerfis(nome));
+            CamadaNegocio.UsuarioCamadaNegocio ucn = new CamadaNegocio.UsuarioCamadaNegocio();
+            return Json(ucn.ObterPerfis(nome));
         }
     }
 }

@@ -126,7 +126,18 @@ let index = {
 
                 document.getElementById("divMsgAux").innerHTML = "deu erro";
             })
-    }
+    },
+
 }
+
+    function selecionarPerfil(id, nome) {
+
+        document.getElementById("hIdPerfil").value = id;
+
+        document.getElementById("divPerfilNome").innerHTML = nome;
+
+        $.fancybox.close();
+    }
+
 
 

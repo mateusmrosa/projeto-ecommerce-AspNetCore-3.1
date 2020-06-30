@@ -23,6 +23,7 @@ namespace ecommerce.Controllers
         [AllowAnonymous] //permitir anonimo, (requisição não autentica)
         public IActionResult Index()
         {
+            // teste
             return View();
         }
 

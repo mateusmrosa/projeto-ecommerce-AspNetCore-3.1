@@ -12,50 +12,58 @@ namespace ecommerce.CamadaAcessoDados
     {
         MySQLPersistencia _bd = new MySQLPersistencia();
 
-        public Perfil Obter(int id)
+        public Models.Perfil Obter(int id)
         {
-            Perfil perfil = null;
+            Models.Perfil perfil = null;
 
-            string select = @"select * from perfil where id = " + id;
+            string select = @"select * 
+                              from perfil 
+                              where id = " + id;
 
             DataTable dt = _bd.ExecutaSelect(select);
 
             if (dt.Rows.Count == 1)
             {
+                //ORM - Relacional -> Objeto
                 perfil = Map(dt.Rows[0]);
             }
 
             return perfil;
+
         }
 
-        public List<Perfil> Pesquisar(string nome)
+        public List<Models.Perfil> Pesquisar(string nome)
         {
-            List<Perfil> listaPerfis = new List<Perfil>();
 
-            string select = @"select * from perfil where nome like @nome";
+            List<Models.Perfil> perfis = new List<Models.Perfil>();
+
+            string select = @"select * 
+                              from Perfil 
+                              where nome like @nome";
 
             var parametros = _bd.GerarParametros();
-
             parametros.Add("@nome", "%" + nome + "%");
 
             DataTable dt = _bd.ExecutaSelect(select, parametros);
 
             foreach (DataRow row in dt.Rows)
             {
-                listaPerfis.Add(Map(row));
+                perfis.Add(Map(row));
             }
 
-            return listaPerfis;
+            return perfis;
+
         }
 
-        internal Perfil Map(DataRow row)
+        internal Models.Perfil Map(DataRow row)
         {
-            Perfil perfil = new Perfil();
+            Models.Perfil perfil = new Models.Perfil();
             perfil.Id = Convert.ToInt32(row["id"]);
             perfil.Nome = row["nome"].ToString();
 
             return perfil;
         }
+
 
 
 

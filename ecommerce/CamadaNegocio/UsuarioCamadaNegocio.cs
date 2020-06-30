@@ -53,10 +53,10 @@ namespace ecommerce.CamadaNegocio
             
         }
 
-        public List<Perfil> ObterPerfis(string nome)
+        public List<Models.Perfil> ObterPerfis(string nome)
         {
-            PerfilBD perfilBD = new PerfilBD();
-            return perfilBD.Pesquisar(nome);
+            CamadaAcessoDados.PerfilBD pbd = new CamadaAcessoDados.PerfilBD();
+            return pbd.Pesquisar(nome);
         }
     }
 }
